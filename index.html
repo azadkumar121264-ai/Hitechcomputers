@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Hi Tech Computer Education Centre offers computer, laptop, CCTV, networking and printer services in Kala Amb, Haryana."
+    />
+    <title>Hi Tech Computer Education Centre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --brand: #32b26b;
+        --brand-dark: #1f7e4f;
+        --brand-soft: #edfdf3;
+        --brand-light: #dcf8e7;
+        --text: #1d1d1f;
+        --muted: #58645e;
+        --card: #ffffff;
+        --line: #d4ead9;
+        --shadow: 0 14px 30px rgba(50, 178, 107, 0.12);
+        --radius: 22px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Nunito Sans", sans-serif;
+        color: var(--text);
+        background: linear-gradient(180deg, #f8fff9 0%, #edfdf3 100%);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      input,
+      textarea,
+      select {
+        font: inherit;
+      }
+
+      :focus-visible {
+        outline: 3px solid #000;
+        outline-offset: 3px;
+      }
+
+      .container {
+        width: min(1180px, calc(100% - 28px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        background: linear-gradient(135deg, #2ec16a 0%, #1d8b52 100%);
+        color: #fff;
+        font-size: 0.93rem;
+      }
+
+      .topbar-inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        align-items: center;
+        min-height: 46px;
+        flex-wrap: wrap;
+        padding: 10px 0;
+      }
+
+      .topbar-links {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .topbar a {
+        color: #fff;
+        font-weight: 700;
+      }
+
+      .topbar .socials {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .social-pill {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        border-radius: 50%;
+        font-size: 0.78rem;
+        font-weight: 800;
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .header-shell {
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(50, 178, 107, 0.14);
+        position: sticky;
+        top: 0;
+        z-index: 20;
+      }
+
+      .header-main {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 22px;
+        padding: 20px 0;
+      }
+
+      .brand-block {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .brand-logo {
+        width: 62px;
+        height: 62px;
+        border-radius: 18px;
+        background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+        flex-shrink: 0;
+        box-shadow: 0 8px 16px rgba(50, 178, 107, 0.22);
+      }
+
+      .brand-text {
+        min-width: 0;
+      }
+
+      .brand-name {
+        margin: 0;
+        font-family: "Outfit", sans-serif;
+        font-weight: 900;
+        font-size: clamp(1.35rem, 1.8vw, 2.05rem);
+        letter-spacing: 0.04em;
+        line-height: 1.1;
+      }
+
+      .brand-tagline {
+        margin: 4px 0 0;
+        font-size: 0.82rem;
+        color: var(--muted);
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+
+      .site-nav {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .nav-card,
+      .nav-trigger {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 10px 18px;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background: #fff;
+        box-shadow: 0 8px 18px rgba(10, 10, 12, 0.04);
+        font-weight: 800;
+        color: var(--text);
+        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .nav-card:hover,
+      .nav-trigger:hover,
+      .nav-card:focus-visible,
+      .nav-trigger:focus-visible {
+        transform: translateY(-1px);
+        border-color: rgba(50, 178, 107, 0.55);
+        box-shadow: 0 10px 22px rgba(50, 178, 107, 0.12);
+      }
+
+      .nav-dropdown {
+        position: relative;
+      }
+
+      .nav-trigger {
+        cursor: pointer;
+        gap: 8px;
+      }
+
+      .nav-trigger .chevron {
+        font-size: 0.8rem;
+        transition: transform 0.2s ease;
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        top: calc(100% + 12px);
+        right: 0;
+        min-width: 270px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 10px;
+        box-shadow: var(--shadow);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(6px);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+      }
+
+      .nav-dropdown:hover .dropdown-menu,
+      .nav-dropdown:focus-within .dropdown-menu,
+      .nav-dropdown.open .dropdown-menu {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .nav-dropdown:hover .nav-trigger .chevron,
+      .nav-dropdown.open .nav-trigger .chevron,
+      .nav-dropdown:focus-within .nav-trigger .chevron {
+        transform: rotate(180deg);
+      }
+
+      .dropdown-menu a {
+        display: block;
+        padding: 10px 12px;
+        border-radius: 12px;
+        color: var(--text);
+        font-weight: 700;
+      }
+
+      .dropdown-menu a:hover,
+      .dropdown-menu a:focus-visible {
+        background: var(--brand-soft);
+        color: var(--brand-dark);
+      }
+
+      .hero {
+        padding: 52px 0 24px;
+      }
+
+      .hero-wrap {
+        display: block;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 14px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        color: var(--brand-dark);
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        margin: 0;
+        font-family: "Outfit", sans-serif;
+        color: #161819;
+      }
+
+      .hero h1 {
+        margin-top: 18px;
+        font-size: clamp(2.3rem, 4vw, 4.2rem);
+        line-height: 1.05;
+        letter-spacing: -0.04em;
+        max-width: 680px;
+      }
+
+      .hero p {
+        font-size: 1.08rem;
+        color: var(--muted);
+        max-width: 620px;
+        margin: 18px 0 24px;
+      }
+
+      .cta-row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-bottom: 22px;
+      }
+
+      .button-primary,
+      .button-secondary,
+      .map-button,
+      .call-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 49px;
+        padding: 0 20px;
+        border-radius: 14px;
+        font-weight: 800;
+        border: 1px solid transparent;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+      }
+
+      .button-primary,
+      .map-button {
+        background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+        color: #fff;
+        box-shadow: 0 12px 22px rgba(50, 178, 107, 0.2);
+      }
+
+      .button-secondary,
+      .call-button {
+        background: #fff;
+        color: var(--text);
+        border-color: var(--line);
+      }
+
+      .button-primary:hover,
+      .button-secondary:hover,
+      .map-button:hover,
+      .call-button:hover,
+      .button-primary:focus-visible,
+      .button-secondary:focus-visible,
+      .map-button:focus-visible,
+      .call-button:focus-visible {
+        transform: translateY(-1px);
+      }
+
+      .feature-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        max-width: 700px;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 999px;
+        background: var(--brand-soft);
+        border: 1px solid var(--line);
+        padding: 9px 12px;
+        color: var(--brand-dark);
+        font-size: 0.85rem;
+        font-weight: 800;
+      }
+
+      .hero-visual {
+        position: relative;
+      }
+
+      .showcase-card {
+        position: relative;
+        background: linear-gradient(135deg, #fff, #f3fff7);
+        border: 1px solid var(--line);
+        border-radius: 32px;
+        box-shadow: var(--shadow);
+        padding: 18px;
+      }
+
+      .showcase-image {
+        border-radius: 22px;
+        overflow: hidden;
+      }
+
+      .showcase-image img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+      }
+
+      .promo-banner {
+        position: relative;
+        display: block;
+        min-height: 470px;
+        overflow: hidden;
+        background:
+          linear-gradient(135deg, rgba(13, 35, 74, 0.88), rgba(7, 25, 47, 0.86)),
+          url('https://d1csarkz8obe9u.cloudfront.net/posterpreviews/computer-repair-services-template-design-7333a88f9c2e9f81436a28384f09bb5a_screen.jpg?ts=1689809252') center/cover no-repeat;
+        border-radius: 28px;
+        box-shadow: 0 20px 36px rgba(8, 18, 35, 0.2);
+      }
+
+      .promo-banner::before {
+        content: "";
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 100%;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
+      }
+
+      .promo-copy {
+        position: relative;
+        z-index: 1;
+        padding: 42px 32px 24px 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .promo-kicker {
+        color: #fff;
+        font-size: clamp(1.05rem, 1.9vw, 1.6rem);
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .promo-copy h1 {
+        margin: 14px 0 18px;
+        color: #fff;
+        font-size: clamp(2.8rem, 5vw, 5.7rem);
+        line-height: 0.88;
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
+      }
+
+      .promo-copy h1 span {
+        display: block;
+        color: #ff5e5e;
+        font-style: italic;
+      }
+
+      .promo-copy .repair-line {
+        display: inline-block;
+        margin-top: 12px;
+        padding: 14px 18px;
+        border-radius: 12px;
+        background: rgba(233, 62, 62, 0.95);
+        color: #fff;
+        font-size: clamp(1.05rem, 1.6vw, 1.7rem);
+        font-weight: 900;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        box-shadow: 0 10px 20px rgba(229, 72, 72, 0.25);
+      }
+
+      .mini-badge {
+        position: absolute;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        padding: 12px 14px;
+        right: -12px;
+        bottom: 24px;
+      }
+
+      .mini-badge strong {
+        display: block;
+        font-size: 1.4rem;
+        color: var(--brand);
+      }
+
+      .mini-badge span {
+        color: var(--muted);
+        font-size: 0.8rem;
+        font-weight: 800;
+      }
+
+      section {
+        padding: 44px 0;
+      }
+
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 18px;
+        margin-bottom: 24px;
+      }
+
+      .section-kicker {
+        color: var(--brand-dark);
+        font-size: 0.8rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 9px;
+      }
+
+      .section-head h2 {
+        font-size: clamp(1.9rem, 2.8vw, 2.8rem);
+        line-height: 1.15;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 26px;
+        align-items: stretch;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: 0 8px 18px rgba(12, 12, 15, 0.03);
+      }
+
+      .about-copy {
+        padding: 30px;
+      }
+
+      .about-copy p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
+        gap: 16px;
+        margin-top: 26px;
+      }
+
+      .stat {
+        padding: 18px 16px;
+        background: linear-gradient(180deg, #fff, #fff6f6);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+      }
+
+      .stat strong {
+        display: block;
+        font-family: "Outfit", sans-serif;
+        font-size: clamp(1.5rem, 2vw, 2rem);
+        color: var(--brand);
+      }
+
+      .stat span {
+        color: var(--muted);
+        font-weight: 800;
+      }
+
+      .about-visual {
+        padding: 14px;
+      }
+
+      .about-visual img {
+        width: 100%;
+        height: 100%;
+        min-height: 300px;
+        border-radius: 22px;
+        object-fit: cover;
+      }
+
+      .service-block {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .faq-item {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(12, 12, 15, 0.03);
+      }
+
+      .faq-question {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        padding: 20px 18px 16px;
+        background: #fff;
+        border: 0;
+        text-align: left;
+        font-family: "Outfit", sans-serif;
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: var(--text);
+      }
+
+      .faq-answer {
+        max-height: none;
+        overflow: visible;
+      }
+
+      .faq-content {
+        padding: 0 18px 18px;
+      }
+
+      .faq-content img {
+        width: 100%;
+        height: 190px;
+        object-fit: cover;
+        border-radius: 18px;
+        margin-bottom: 14px;
+      }
+
+      .faq-content p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+        margin-top: 26px;
+      }
+
+      .service-card {
+        overflow: hidden;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+      }
+
+      .service-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+      }
+
+      .service-card-body {
+        padding: 18px 18px 20px;
+      }
+
+      .service-card-body h3 {
+        font-size: 1.7rem;
+        margin-bottom: 10px;
+      }
+
+      .service-card-body p {
+        color: var(--muted);
+        margin: 0;
+      }
+
+      .service-note {
+        margin-top: 22px;
+        padding: 18px 20px;
+        border-radius: 18px;
+        background: #f2fff5;
+        border: 1px solid var(--line);
+        color: var(--brand-dark);
+        font-weight: 800;
+        text-align: center;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .info-card {
+        padding: 22px 18px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        min-height: 180px;
+      }
+
+      .info-card .icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        background: var(--brand-soft);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+      }
+
+      .info-card h3 {
+        font-size: 1.24rem;
+        margin-bottom: 8px;
+      }
+
+      .info-card p,
+      .info-card a {
+        margin: 0;
+        color: var(--muted);
+        font-weight: 700;
+      }
+
+      .visit-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 26px;
+        align-items: center;
+      }
+
+      .visit-photo {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        overflow: hidden;
+      }
+
+      .visit-photo img {
+        width: 100%;
+        height: 100%;
+        min-height: 420px;
+        object-fit: cover;
+      }
+
+      .visit-content {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 24px;
+      }
+
+      .visit-content h3 {
+        font-size: clamp(1.7rem, 2vw, 2.4rem);
+        margin-bottom: 14px;
+      }
+
+      .address {
+        margin: 0 0 18px;
+        color: var(--muted);
+        font-weight: 700;
+        line-height: 1.8;
+      }
+
+      .map-preview {
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        margin-bottom: 18px;
+      }
+
+      .map-preview iframe {
+        width: 100%;
+        height: 220px;
+        border: 0;
+        display: block;
+      }
+
+      .visit-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      footer {
+        background: #17171a;
+        color: #f9f8f7;
+        text-align: center;
+        padding: 20px 0;
+        font-weight: 700;
+      }
+
+      .whatsapp-float {
+        position: fixed;
+        right: 18px;
+        bottom: 18px;
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: #1ecb61;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 12px 22px rgba(30, 203, 97, 0.35);
+        z-index: 50;
+        border: 2px solid rgba(255, 255, 255, 0.7);
+      }
+
+      .whatsapp-float svg {
+        width: 29px;
+        height: 29px;
+      }
+
+      @media (max-width: 980px) {
+        .header-main {
+          flex-wrap: wrap;
+        }
+
+        .hero-wrap,
+        .about-grid,
+        .visit-layout,
+        .service-block {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .service-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .site-nav {
+          width: 100%;
+          justify-content: flex-start;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .topbar-inner {
+          justify-content: center;
+          text-align: center;
+        }
+
+        .topbar-links,
+        .socials {
+          justify-content: center;
+        }
+
+        .header-main {
+          padding: 14px 0;
+          gap: 12px;
+        }
+
+        .brand-block {
+          width: 100%;
+        }
+
+        .site-nav {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          width: 100%;
+        }
+
+        .nav-card,
+        .nav-trigger {
+          width: 100%;
+        }
+
+        .dropdown-menu {
+          right: auto;
+          left: 0;
+          min-width: 100%;
+        }
+
+        .hero {
+          padding-top: 34px;
+        }
+
+        .promo-banner {
+          min-height: 320px;
+          border-radius: 22px;
+        }
+
+        .promo-copy {
+          padding: 26px 18px 18px;
+        }
+
+        .promo-kicker {
+          font-size: 0.8rem;
+          letter-spacing: 0.06em;
+        }
+
+        .promo-copy h1 {
+          font-size: clamp(2.2rem, 10vw, 4rem);
+        }
+
+        .promo-copy .repair-line {
+          font-size: 0.9rem;
+          padding: 10px 12px;
+        }
+
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .showcase-image img {
+          height: 360px;
+        }
+
+        .mini-badge {
+          right: 16px;
+          bottom: 16px;
+        }
+
+        .section-head {
+          display: block;
+        }
+
+        .service-card img {
+          height: 180px;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .brand-block {
+          align-items: flex-start;
+        }
+
+        .brand-name {
+          letter-spacing: 0.01em;
+          font-size: 1.2rem;
+        }
+
+        .brand-tagline {
+          font-size: 0.7rem;
+        }
+
+        .site-nav {
+          grid-template-columns: 1fr;
+        }
+
+        .promo-banner {
+          min-height: 290px;
+          border-radius: 18px;
+        }
+
+        .promo-copy {
+          padding: 22px 14px 16px;
+        }
+
+        .promo-kicker {
+          font-size: 0.68rem;
+          letter-spacing: 0.06em;
+        }
+
+        .promo-copy h1 {
+          margin: 10px 0 12px;
+          font-size: clamp(2rem, 12vw, 3rem);
+        }
+
+        .promo-copy .repair-line {
+          width: 100%;
+          text-align: center;
+          font-size: 0.84rem;
+        }
+
+        .cta-row,
+        .visit-actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .button-primary,
+        .button-secondary,
+        .map-button,
+        .call-button {
+          width: 100%;
+        }
+
+        .stats {
+          grid-template-columns: 1fr;
+        }
+
+        .info-card,
+        .visit-content {
+          padding: 18px;
+        }
+
+        .map-preview iframe {
+          height: 180px;
+        }
+
+        .service-card-body h3 {
+          font-size: 1.35rem;
+        }
+
+        .whatsapp-float {
+          width: 54px;
+          height: 54px;
+          right: 14px;
+          bottom: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <div class="topbar-links">
+          <a href="tel:+919882361170">+91 98823 61170</a>
+          <a href="tel:+919813061170">+91 98130 61170</a>
+          <a href="mailto:hitechcomputers9001@gmail.com">hitechcomputers9001@gmail.com</a>
+        </div>
+        <div class="socials" aria-label="Social links">
+          <a class="social-pill" href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">IG</a>
+        </div>
+      </div>
+    </div>
+
+    <header class="header-shell">
+      <div class="container header-main">
+        <div class="brand-block" aria-label="Hi Tech Computer Education Centre">
+          <svg class="brand-logo" viewBox="0 0 120 120" aria-hidden="true">
+            <rect x="10" y="10" width="100" height="100" rx="24" fill="#32b26b"/>
+            <rect x="26" y="28" width="68" height="52" rx="8" fill="none" stroke="white" stroke-width="6"/>
+            <path d="M34 90h52" stroke="white" stroke-width="6" stroke-linecap="round"/>
+            <path d="M48 30V72M72 30V72M48 52H72" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="48" cy="30" r="4" fill="white"/>
+            <circle cx="72" cy="30" r="4" fill="white"/>
+            <circle cx="48" cy="72" r="4" fill="white"/>
+            <circle cx="72" cy="72" r="4" fill="white"/>
+          </svg>
+          <div class="brand-text">
+            <h1 class="brand-name">HI TECH COMPUTER EDUCATION CENTRE</h1>
+            <p class="brand-tagline">Computer, Laptop, CCTV, Networking and Printer Services</p>
+          </div>
+        </div>
+
+        <nav class="site-nav" aria-label="Main navigation">
+          <a class="nav-card" href="#home">Home</a>
+          <a class="nav-card" href="#about">About Us</a>
+          <div class="nav-dropdown" aria-label="Services dropdown">
+            <button class="nav-trigger" type="button" aria-expanded="false">
+              Services <span class="chevron">▾</span>
+            </button>
+            <div class="dropdown-menu" role="menu">
+              <a href="#cctv-services">CCTV Services</a>
+              <a href="#networking-services">Networking</a>
+              <a href="#printer-services">Printer and Toner</a>
+              <a href="#laptop-repair">Laptop Repair</a>
+              <a href="#desktop-custom-pc">Desktop and Custom PC</a>
+            </div>
+          </div>
+          <a class="nav-card" href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-wrap">
+          <div class="promo-banner" aria-label="Computer repair promotional banner">
+            <div class="promo-copy">
+              <div class="promo-kicker">Fast • Reliable • Affordable</div>
+              <h1>Computer <span>Repair</span></h1>
+              <div class="repair-line">We fix all computer problems!</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="section-kicker">About us</div>
+              <h2>Computer, CCTV and network support for homes, shops and offices.</h2>
+            </div>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-copy card">
+              <p>
+                We handle computers, laptops, CCTV cameras, networks and printers for homes,
+                shops and offices. Quick fixes, neat installation, affordable rates, all Windows
+                versions and third-party software supported.
+              </p>
+              <div class="stats">
+                <div class="stat">
+                  <strong>15+</strong>
+                  <span>Years of service</span>
+                </div>
+                <div class="stat">
+                  <strong>100%</strong>
+                  <span>Practical support</span>
+                </div>
+                <div class="stat">
+                  <strong>24/7</strong>
+                  <span>Service advice</span>
+                </div>
+                <div class="stat">
+                  <strong>Mon-Sat</strong>
+                  <span>Open hours</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-visual card">
+              <img
+                src="https://www.shutterstock.com/image-photo/human-hand-touchscreen-login-username-260nw-2775021907.jpg"
+                alt="Service team and office equipment"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="section-kicker">Our services</div>
+              <h2>Reliable repair, installation and support</h2>
+            </div>
+          </div>
+
+          <div class="service-block">
+            <article class="faq-item" id="cctv-services">
+              <div class="faq-question">
+                <span>CCTV Services</span>
+              </div>
+              <div class="faq-answer">
+                <div class="faq-content">
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPClMCykBJYZebmFaiUYdDX9S1gZPlab1fdVskf0bRlg&s=10"
+                    alt="Technician installing CCTV camera on wall"
+                    loading="lazy"
+                  />
+                  <p>CCTV wiring, camera installation, DVR / NVR problems power reset, CCTV camera problems.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="faq-item" id="networking-services">
+              <div class="faq-question">
+                <span>Networking</span>
+              </div>
+              <div class="faq-answer">
+                <div class="faq-content">
+                  <img
+                    src="https://static.vecteezy.com/system/resources/thumbnails/028/765/621/small/computer-technician-working-with-screwdriver-in-service-center-generative-ai-photo.jpg"
+                    alt="Engineer working on network cable installation"
+                    loading="lazy"
+                  />
+                  <p>Local networking wiring and installation, wireless networking, CPU and printer sharing,router configuration and maintenance.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="faq-item" id="printer-services">
+              <div class="faq-question">
+                <span>Printer and Toner</span>
+              </div>
+              <div class="faq-answer">
+                <div class="faq-content">
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhGlHwjhHuCRL3Ev-7WF7tBiExXBwz47koo_esSQd2MQ&s=10"
+                    alt="Printer being repaired with toner cartridge"
+                    loading="lazy"
+                  />
+                  <p>Toner refilling, Canon and HP professional printer service.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="service-grid">
+            <article class="service-card" id="laptop-repair">
+              <img
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80"
+                alt="Laptop motherboard repair"
+              />
+              <div class="service-card-body">
+                <h3>Laptop Repair</h3>
+                <p>Keyboard change, battery change, Windows password reset, all types of laptop services.</p>
+              </div>
+            </article>
+
+            <article class="service-card" id="desktop-custom-pc">
+              <img
+                src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=900&q=80"
+                alt="Gaming PC built for a customer"
+              />
+              <div class="service-card-body">
+                <h3>Desktop and Custom PC</h3>
+                <p>Desktop CPU and server, MS Office PC, designer PC, gaming PC built at an affordable rate, all Windows and third-party software,cpu password reset services.</p>
+              </div>
+            </article>
+
+            <article class="service-card" id="remote-support">
+              <img
+                src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=900&q=80"
+                alt="Remote computer support"
+              />
+              <div class="service-card-body">
+                <h3>Remote Support</h3>
+                <p>Online troubleshooting, software installation, Windows setup, Wi‑Fi and printer guidance, remote help for homes and offices.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="service-note">
+            Service available within 15 to 20 km. Mon to Sat, 10 am to 6 pm. Sunday closed.
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="section-kicker">Contact</div>
+              <h2>Reach us anytime for support and service</h2>
+            </div>
+          </div>
+
+          <div class="contact-grid">
+            <div class="info-card">
+              <div class="icon" aria-hidden="true">☎</div>
+              <h3>Phone</h3>
+              <p><a href="tel:+919882361170">+91 98823 61170</a></p>
+              <p><a href="tel:+919813061170">+91 98130 61170</a></p>
+            </div>
+
+            <div class="info-card">
+              <div class="icon" aria-hidden="true">✉</div>
+              <h3>Email</h3>
+              <p><a href="mailto:hitechcomputers0001@gmail.com">hitechcomputers0001@gmail.com</a></p>
+            </div>
+
+            <div class="info-card">
+              <div class="icon" aria-hidden="true">◎</div>
+              <h3>Instagram</h3>
+              <p><a href="https://www.instagram.com/hitechcomputer0001?stkn=MXVmYzViZ3Z5bXdreQ==" target="_blank" rel="noreferrer">@hitechcomputers0001</a></p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="visit">
+        <div class="container visit-layout">
+          <div class="visit-content">
+            <div class="section-kicker">Visit our shop</div>
+            <h3>Hi-Tech Computers Education Center</h3>
+            <p class="address">
+              Opposite Black Mango Dhaba,<br />
+              Naraingarh Road, Dera,<br />
+              Kala Amb, Haryana 134203
+            </p>
+
+            <div class="map-preview">
+              <iframe
+                title="Google Map location for Hi-Tech Computers Education Center"
+                src="https://www.google.com/maps?q=Hi-Tech%20Computers%20Education%20Center%20Dera%20Kala%20Amb&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+
+            <div class="visit-actions">
+              <a class="map-button" href="https://maps.google.com/?q=Hi-Tech%20Computers%20Education%20Center%20Dera%20Kala%20Amb" target="_blank" rel="noreferrer">Open in Google Maps</a>
+              <a class="call-button" href="tel:+919882361170">Call now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">Copyright Hi Tech Computer Education Centre.</div>
+    </footer>
+
+    <a class="whatsapp-float" href="https://wa.me/919882361170" target="_blank" rel="noreferrer" aria-label="Message on WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M19.05 4.95A9.85 9.85 0 0 0 12.1 2C6.62 2 2.18 6.44 2.18 11.92c0 1.72.46 3.4 1.33 4.87L2 22l5.34-1.35a9.9 9.9 0 0 0 4.76 1.17h.01c5.49 0 9.93-4.44 9.93-9.92 0-2.65-1.03-5.15-2.99-7.02Zm-6.95 15.07h-.01a8.16 8.16 0 0 1-4.16-1.14l-.3-.18-3.17.8.85-3.08-.2-.32a8.16 8.16 0 0 1-1.25-4.35c0-4.52 3.68-8.2 8.2-8.2a8.17 8.17 0 0 1 8.2 8.2c0 4.53-3.68 8.2-8.2 8.2Zm4.5-6.16c-.25-.13-1.46-.72-1.68-.8-.22-.08-.38-.13-.54.13-.16.25-.62.8-.76.97-.14.16-.28.18-.53.06-.25-.13-1.05-.39-2-1.26-.74-.66-1.24-1.48-1.38-1.73-.15-.25-.02-.38.11-.5.11-.11.25-.28.37-.42.12-.14.17-.24.25-.4.08-.16.04-.3-.02-.42-.06-.13-.54-1.3-.74-1.78-.19-.47-.39-.4-.54-.41l-.46-.01c-.16 0-.42.06-.64.3-.22.25-.84.82-.84 2 0 1.18.86 2.32.98 2.47.12.15 1.68 2.56 4.07 3.59.57.25 1.01.4 1.36.52.57.18 1.08.16 1.49.1.45-.07 1.46-.6 1.67-1.18.2-.58.2-1.08.14-1.18-.06-.1-.22-.16-.47-.29Z"/>
+      </svg>
+    </a>
+
+    <script>
+      const navDropdown = document.querySelector('.nav-dropdown');
+      const navTrigger = document.querySelector('.nav-trigger');
+
+      navTrigger.addEventListener('click', function () {
+        const isOpen = navDropdown.classList.toggle('open');
+        navTrigger.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      document.addEventListener('click', function (event) {
+        if (!navDropdown.contains(event.target)) {
+          navDropdown.classList.remove('open');
+          navTrigger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    </script>
+  </body>
+</html>
